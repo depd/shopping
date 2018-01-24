@@ -60,6 +60,7 @@
                 return this.$store.getters.colors;
             },
             filteredAndOrderedList () {
+                // 复制原始数据
                 let list = [...this.list];
                 // 按品牌过滤
                 if (this.filterBrand !== '') {

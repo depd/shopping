@@ -18,7 +18,8 @@ export default {
     data:function(){
         return {
             text:'',
-            psd:""
+            psd:"",
+            logins:false
         }
     },
     mounted () {
@@ -30,10 +31,11 @@ export default {
             // 登陆
             if(this.text != "" && this.psd != ""){
                 setTimeout(() => {
-                    consol.log("验证成功，可以登录");
+                    console.log("验证成功，可以登录");
                     resolve();
                 },1000);
                 this.$router.push("list");
+                this.$store.state.logins = true;
             }else{
                 alert("请输入正确的账号密码")
             }

@@ -43,10 +43,17 @@ function getFilterArray (array) {
 
 const store = new Vuex.Store({
     state: {
+        // 商品列表数据
         productList: [],
-        cartList: []
+        // 购物车数据
+        cartList: [],
+        text:"",
+        psd:"",
+        // 登陆状态
+        logins:false
     },
     getters: {
+        // 过滤
         brands: state => {
             const brands = state.productList.map(item => item.brand);
             return getFilterArray(brands);
